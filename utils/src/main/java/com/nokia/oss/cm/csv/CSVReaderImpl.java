@@ -42,7 +42,7 @@ public class CSVReaderImpl implements CSVReader {
 
 	private Collection<NEPojo> createNEPojoList(List<String> csvLines) {
 		List<NEPojo> nePojos = new ArrayList<>();
-		for (String line : csvLines) {
+		for (String line : csvLines.subList(1,csvLines.size())) {
 			nePojos.add(createNEPojo(line));
 		}
 		return nePojos;
